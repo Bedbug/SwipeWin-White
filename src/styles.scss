@@ -1,1 +1,128 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/uikit/src/scss/variables-theme";
+@import "../node_modules/uikit/src/scss/mixins-theme";
+@import "../node_modules/uikit/src/scss/uikit-theme";
+
+@import 'assets/fonts.scss';
+@import 'assets/media-queries.scss';
+@import 'assets/variables.scss';
+@import '../node_modules/perfect-scrollbar/css/perfect-scrollbar.css';
+
+
+#offcanvas-nav{
+  .uk-offcanvas-bar{
+    top: 4rem;
+    width: 100%;
+    padding: 0;
+    padding-right:0;
+  }
+  .nav-list-box{
+    border-bottom: 1px solid #e2e5eb;
+    padding: 20px;
+    padding-right: 0;
+    margin-left: 14px;
+    padding-left: 7px;
+    span{
+      padding-top: 4px;
+    }
+    &.last-item{
+      margin-left: 0px;
+      padding-left:21px;
+    }
+  }
+  .nav-list-button{
+    font-size: 17px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.41;
+    letter-spacing: normal;
+    color: #001424;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .nav-list-icon{
+    width: 30px;
+    vertical-align: sub;
+    margin-right: 10px;
+
+  }
+  .offcanvas-footer{
+    background-color:#f2f3f7;
+    padding: 17px 22px 15px 26px;
+    p{
+      color:#9198a0;
+      a{
+        color: #9198a0;
+      }
+    }
+    a.uk-button-link{
+      color:#9198a0;
+    }
+  }
+}
+html, body {
+  // font-family: 'CorpidE1SCd_Regular', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: 'CorpidE1SCd_Regular', -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  * {
+    font-family: 'CorpidE1SCd_Regular', -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  }
+  height: 100%;
+  // background-image: radial-gradient(circle at 50% 50%, #007cff, #002094);
+  background-image: radial-gradient(circle at 50% 50%, #41307d, #1a1724);
+}
+
+.uk-logo{
+  font-family: 'CorpidE1SCd_Regular', -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.uk-dotnav > .uk-active > * {
+  background-color: #f8f8f8;
+  border-color: transparent;
+  opacity: 1;
+}
+.uk-dotnav > * > * {
+  opacity: 0.3;
+  background-color: #000000;
+}
+.buttons-container {
+  margin-top: 1rem;
+  .play-button {
+    border-radius: 17px;
+    box-shadow: 0 9px 13px 0 rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to bottom, #f7a8f5, #da12f2 16%, #8407ad 66%, #4b1f5a);
+    margin-bottom: 12px;
+    border:none;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: center;
+    color: white;
+    min-height:44px;
+    text-transform: none;
+  }
+}
+
+.btnWrap {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.uk-modal-dialog {
+  border-radius: 4px;
+}
+
+.unsubscribe > div {
+  margin-top: 0 !important;
+}
+
+.redIcon {
+  svg {
+    color: red;
+  }
+}

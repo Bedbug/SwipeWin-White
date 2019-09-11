@@ -9,4 +9,14 @@ if (environment.production) {
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+  .then(ref => {
+    // Ensure Angular destroys itself on hot reloads.
+    // This comes from a catch-refresh example at https://stackblitz.com/edit/angular-r6-detect-browser-refresh?file=src%2Fmain.ts 
+    if (window['ngRef']) {
+      window['ngRef'].destroy();
+    }
+    window['ngRef'] = ref;
+  
+    // Otherwise, log the boot error
+  })
+  .catch(err => console.log(err));

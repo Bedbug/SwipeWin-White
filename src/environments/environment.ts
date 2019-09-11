@@ -3,7 +3,24 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+    production: false,
+    
+    name: 'development',
+
+    // the path to the game server for the game DataService calls
+    //gameServerDomainUrl: 'http://localhost:3030',
+    gameServerDomainUrl: 'https://swipewin-whitelabel.herokuapp.com',
+    
+    // the path to MTS Authentication API for WebSSO user authentication
+    mtsAuthDomainUrl: 'login.mts.ru',
+    
+    // the http protocol of the MTS Authentication API for WebSSO user authentication
+    mtsAuthDomainProtocol: 'https',
+    
+    mtsAuthClientId: 'test@b2b.mts.ru',
+    
+    // the MTS WebSSO authentication callback url
+    mtsAuthCallbackUrl: 'https://swipr-themisbrink.c9users.io/auth-callback'
 };
 
 /*
@@ -13,4 +30,4 @@ export const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+ import 'zone.js/dist/zone-error';  // Included with Angular CLI.

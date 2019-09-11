@@ -1,0 +1,92 @@
+.faq-component {
+  margin: 16px;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #000000;
+  .faq-item {
+    padding: 16px 11px 16px 11px;
+    border-radius: 4px;
+    box-shadow: 0 2px 20px 0 rgba(60, 61, 64, 0.1), 0 2px 4px 0 rgba(55, 55, 56, 0.2);
+    background-color: #ffffff;
+    .uk-accordion-content {
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.43;
+      letter-spacing: normal;
+      color: #9b9b9b;
+    }
+  }
+}
+.uk-accordion-title:before {
+  background-color: #9b9b9b;
+  mask: url('../../../node_modules/uikit/src/images/icons/chevron-down.svg') no-repeat 50% 50%;
+}
+.uk-open {
+  .uk-accordion-title:before {
+    background-color: #9b9b9b;
+    mask: url('../../../node_modules/uikit/src/images/icons/chevron-up.svg') no-repeat 50% 50%;
+  }
+}
+.message-container{
+    font-size: 17px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 13px;
+    margin-top: 0.5em;
+  }
+  
+.buttons-container{
+  max-width: 600px;
+}
+
+.main-footer{
+  background-color: #f2f3f7;
+  padding: 1.3rem;
+  color: #9198a0;
+  .uk-button-link{
+    color: #9198a8;
+    cursor:pointer;
+  }
+}
+
+#error {
+  text-align: center;
+  padding-top: 15px;
+  h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 20px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.43;
+    color: #6e7782;
+  }
+}
+#save {
+  text-align: center;
+  padding-top: 15px;
+  h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 20px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.43;
+    color: #6e7782;
+  }
+}

@@ -1,0 +1,101 @@
+<div class="profile-component uk-text-center settings" style="max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;">
+  <div class="avatar">
+    <!--<ngx-avatar *ngIf="showAvatar" class="my-avatar" -->
+  
+    <!--  src="{{avatarPic}}" name="{{_name}}" -->
+    <!--  size="70" [round]="true">-->
+    <!--</ngx-avatar>-->
+    <img ngxGravatar class="my-avatar" size="80" src="{{avatarPic}}">
+    <!--add functionality (upload Pic)-->
+    <div class="js-upload" uk-form-custom>
+    <input type="file" accept="image/*" class="btn" (change)="OnFileSelected($event)" multiple>
+    
+    <app-button [secondary]="true" class="btn">Upload Profile Photo</app-button> 
+    
+    </div>
+    <!--<input class="btn" type="file" (change)="OnFileSelected($event)" >-->
+     
+  </div>
+  <form class="uk-form-stacked">
+    <!--Update Info after stop Texting-->
+    <app-input-text
+      [label]="true"
+      inputType="text"
+      inputPlaceholder="Name"
+      placeholder="{{_name}}"
+      (keyup)="onKeyName($event)"
+    >{{_name}}
+    </app-input-text>
+    <div class="sex-selector">
+      <label class="uk-form-label label" for="sex">Sex</label>
+      <div class="uk-button-group" id="sex" data-uk-button-radio>
+        
+        <div class="uk-button uk-width-1-2 " (click)="doAlert()" [ngClass]="sex ? 'active' : ''">
+          <label class="uk-button" for="male">Male</label>
+          </div>
+        <div class="uk-button uk-width-1-2" (click)="doAlert()" [ngClass]="!sex ? 'active' : ''">
+          <label class="uk-button" for="female" >Female</label>
+          
+          </div>
+        
+        <!--<input type="radio" id="male" name="gender" value="0" style="display:none;" checked/>-->
+        <!--<label class="uk-button" for="male">Муж</label>-->
+        
+        <!--<input type="radio" id="female" name="gender" value="1" style="display:none;"/>-->
+        <!--<label class="uk-button" for="female">Жен</label>-->
+      
+      </div>
+    </div>
+    <app-input-text
+      [label]="true"
+      inputType="text"
+      inputPlaceholder="Age"
+      placeholder="{{_age}}"
+      (keyup)="onKeyAge($event)"
+    >{{_age}}</app-input-text>
+  </form>
+  <div class="buttons-container uk-container uk-text-center">
+    <!--Toggle Unsubscribe-->
+    
+    <app-button [secondary]="true" class="btn" (click)="sendMail()">Help</app-button>
+    <app-button [secondary]="true" class="btn" (click)="saveData()" >Save</app-button>
+    <app-button [link_button]="true" [link_button_white]="true" (click)="logOut()" >Log Out</app-button>
+    <app-button [link_button]="true" [link_button_white]="true" class="btn unsubscribe" uk-toggle="target: #unsubscribe">Unsubscribe</app-button>
+  </div>
+  
+  <!--Toggled Modal-->
+  <div id="unsubscribe" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+      <app-subscribe-dialog></app-subscribe-dialog>
+    </div>
+  </div>
+</div>
+<div class="main-footer uk-container" >
+<!--  Служба поддержки:  111777 (бесплатно) или отправьте письмо на support@gu-group.ru-->
+<!--Услуга оказывается МТС совместно с партнером "ДжЮ Груп". Акция проходит под контролем независимого наблюдателя-->
+   <p>Support: 1234 (toll free) or <a href="mailto:support.mts@gu-group.ru" class="uk-button-link" style="text-decoration:underline">support@gugroup.com</a>
+      <br>18+   |      © 2019 GU Group. All rights reserved.
+    </p>
+</div>
+  
+  <!--<div id="error" class="uk-flex-top" uk-modal>-->
+  <!--  <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">-->
+  <!--    <img src="assets/images/wanted.svg" alt="">-->
+  <!--    <h4>Упс...</h4>-->
+  <!--    <pre>Изображение, которое вы пытаетесь загрузить, слишком большое. Размер не должен превышать 1 MB. Пожалуйста, попытайтесь еще раз.</pre>-->
+      <!--<p>{{errorMsg}}</p>-->
+  <!--    <app-button [link_button]="true" class="uk-modal-close">Назад</app-button>-->
+  <!--  </div>-->
+  <!--</div>-->
+ 
+  <div id="error" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+      <img src="assets/icons/icon-check.svg" alt="">
+      <h4>Changes Saved</h4>
+      <p>Profile updates saved</p>
+      <!--<p>{{errorMsg}}</p>-->
+      <app-button [link_button]="true" class="uk-modal-close"(click)="goProfile()" >Back</app-button>
+    </div>
+  </div>
